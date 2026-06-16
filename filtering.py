@@ -40,7 +40,7 @@ def comb_band_stop(notch, filtered, Q, fs):
     j = 1
     while (notch / j) > 1:
         #print(notch * i)
-        f0 = notch / i
+        f0 = notch / j
         w0 = f0/nyquist
         b,a = signal.iirnotch(w0, Q)
         filtered = signal.filtfilt(b, a, filtered)
